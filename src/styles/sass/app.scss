@@ -2,6 +2,7 @@
 @import './header';
 @import './search_bar';
 @import './countries_list';
+@import './filters';
 * {
   margin: 0;
   padding: 0;
@@ -21,4 +22,9 @@
     width: 85%;
     margin: 100px auto auto auto;
   }
+}
+.flex__container {
+  display: flex;
+  padding-top: 20px;
+  position: relative;
 }

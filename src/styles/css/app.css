@@ -169,6 +169,81 @@ header .container .mode__container .mode {
   color: #ccc;
 }
 
+.filters__container {
+  min-width: 200px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.03);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  color: white;
+  position: absolute;
+  right: 0;
+}
+
+.filters__container .toggle__filters {
+  background-color: #2b3945;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px 20px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.filters__container .toggle__filters:hover {
+  color: #ccc;
+}
+
+.filters__container .toggle__filters .toggle__filters__text {
+  padding-right: 40px;
+}
+
+.filters__container .regions {
+  visibility: hidden;
+  border-radius: 5px;
+  background-color: #2b3945;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.filters__container .regions .regions__list {
+  padding: 10px 0;
+}
+
+.filters__container .regions .regions__list li {
+  list-style: none;
+  line-height: 2.2;
+  padding: 0 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.filters__container .regions .regions__list li:hover {
+  color: #ccc;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -191,5 +266,13 @@ header .container .mode__container .mode {
   min-width: 250px;
   width: 85%;
   margin: 100px auto auto auto;
+}
+
+.flex__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 20px;
+  position: relative;
 }
 /*# sourceMappingURL=app.css.map */
