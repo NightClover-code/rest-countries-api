@@ -26,5 +26,7 @@
 .flex__container {
   display: flex;
   padding-top: 20px;
+  justify-content: space-between;
   position: relative;
+  flex-wrap: wrap;
 }

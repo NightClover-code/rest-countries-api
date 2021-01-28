@@ -47,16 +47,13 @@ header .container .mode__container .mode {
   height: 60px;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.03);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  .search__bar {
+    width: 100%;
+  }
 }
 
 .search__bar .search__bar__container {
@@ -68,9 +65,6 @@ header .container .mode__container .mode {
   display: -ms-flexbox;
   display: flex;
   color: white;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -188,8 +182,6 @@ header .container .mode__container .mode {
           align-items: center;
   border-radius: 5px;
   color: white;
-  position: absolute;
-  right: 0;
 }
 
 .filters__container .toggle__filters {
@@ -204,7 +196,6 @@ header .container .mode__container .mode {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 15px 20px;
-  width: 100%;
   border-radius: 5px;
   cursor: pointer;
   -webkit-transition: all 0.2s ease-in-out;
@@ -220,7 +211,7 @@ header .container .mode__container .mode {
 }
 
 .filters__container .regions {
-  visibility: hidden;
+  display: none;
   border-radius: 5px;
   background-color: #2b3945;
   width: 100%;
@@ -273,6 +264,11 @@ header .container .mode__container .mode {
   display: -ms-flexbox;
   display: flex;
   padding-top: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 /*# sourceMappingURL=app.css.map */
