@@ -53,6 +53,7 @@ header .container .mode__container .mode {
 @media screen and (max-width: 800px) {
   .search__bar {
     width: 100%;
+    margin-bottom: 20px;
   }
 }
 
@@ -76,7 +77,7 @@ header .container .mode__container .mode {
   background-color: inherit;
   border: none;
   outline: none;
-  width: 200px;
+  width: 100%;
   margin-left: 10px;
   padding: 0 10px;
   font-family: inherit;
@@ -164,7 +165,6 @@ header .container .mode__container .mode {
 }
 
 .filters__container {
-  min-width: 200px;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.03);
   display: -webkit-box;
