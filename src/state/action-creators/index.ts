@@ -48,6 +48,10 @@ export const fetchCountries = () => async (
       type: ActionType.FETCH_COUNTRIES_ERROR,
       payload: err.message,
     });
+    dispatch({
+      type: ActionType.FILTER_COUNTRIES_ERROR,
+      payload: err.message,
+    });
   }
 };
 //search countries
@@ -58,6 +62,9 @@ export const searchCountries = (term: string) => async (
     //loading
     dispatch({
       type: ActionType.SEARCH_COUNTRIES,
+    });
+    dispatch({
+      type: ActionType.FILTER_COUNTRIES,
     });
     //getting countries data
     const response = await countriesAPI.get(`/name/${term}`);
@@ -76,10 +83,18 @@ export const searchCountries = (term: string) => async (
       type: ActionType.SEARCH_COUNTRIES_SUCCESS,
       payload: countries,
     });
+    dispatch({
+      type: ActionType.FILTER_COUNTRIES_SUCCESS,
+      payload: countries,
+    });
   } catch (err) {
     //dispatching errors
     dispatch({
       type: ActionType.SEARCH_COUNTRIES_ERROR,
+      payload: err.message,
+    });
+    dispatch({
+      type: ActionType.FILTER_COUNTRIES_ERROR,
       payload: err.message,
     });
   }
