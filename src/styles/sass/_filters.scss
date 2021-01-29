@@ -1,0 +1,51 @@
+.filters__container {
+  min-width: 200px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: $white;
+  position: absolute;
+  right: 0;
+  .toggle__filters {
+    background-color: $dark-blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: #ccc;
+    }
+    .toggle__filters__text {
+      padding-right: 40px;
+    }
+  }
+  .regions {
+    visibility: hidden;
+    border-radius: 5px;
+    background-color: $dark-blue;
+    width: 100%;
+    margin-top: 5px;
+
+    .regions__list {
+      padding: 10px 0;
+      li {
+        list-style: none;
+        line-height: 2.2;
+        padding: 0 20px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          color: #ccc;
+        }
+      }
+    }
+  }
+}

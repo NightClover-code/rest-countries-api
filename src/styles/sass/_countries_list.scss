@@ -1,0 +1,44 @@
+.countries__list {
+  display: grid;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  );
+  gap: 60px;
+  .countries__card {
+    padding: 7px;
+    background-color: rgba(0, 0, 0, 0.03);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    .countries__card__container {
+      background-color: $dark-blue;
+      border-radius: 5px;
+      overflow: hidden;
+      .flag img {
+        width: 100%;
+      }
+      .text__content {
+        color: $white;
+        padding: 0 20px;
+        .name {
+          font-size: 18px;
+          margin: 15px 0;
+        }
+        .country__details__list {
+          margin-bottom: 50px;
+          li {
+            list-style: none;
+            line-height: 1.8;
+            span {
+              color: #ccc;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import './variables';
+@import './header';
+@import './search_bar';
+@import './countries_list';
+@import './filters';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.app__container {
+  margin: auto;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  font-size: 14px;
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: $very-dark-blue;
+  .wrapper {
+    max-width: 2000px;
+    min-width: 250px;
+    width: 85%;
+    margin: 100px auto auto auto;
+  }
+}
+.flex__container {
+  display: flex;
+  padding-top: 20px;
+  position: relative;
+}
