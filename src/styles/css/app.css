@@ -132,13 +132,33 @@ header .container .mode__container .mode {
 }
 
 .countries__list .countries__card .countries__card__container {
+  height: 100%;
   background-color: #2b3945;
   border-radius: 5px;
   overflow: hidden;
 }
 
+.countries__list .countries__card .countries__card__container .flag {
+  height: 45%;
+}
+
+@media screen and (max-width: 1200px) {
+  .countries__list .countries__card .countries__card__container .flag {
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .countries__list .countries__card .countries__card__container .flag {
+    height: auto;
+  }
+}
+
 .countries__list .countries__card .countries__card__container .flag img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .countries__list .countries__card .countries__card__container .text__content {
@@ -148,7 +168,7 @@ header .container .mode__container .mode {
 
 .countries__list .countries__card .countries__card__container .text__content .name {
   font-size: 18px;
-  margin: 15px 0;
+  margin: 20px 0 15px 0;
 }
 
 .countries__list .countries__card .countries__card__container .text__content .country__details__list {
