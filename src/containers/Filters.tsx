@@ -1,10 +1,8 @@
-const Filters = () => {
+const Filters: React.FC = () => {
   return (
     <div className="filters__container">
       <div className="toggle__filters">
-        <div className="toggle__filters__text">
-          Filter by Region
-        </div>
+        <div className="toggle__filters__text">Filter by Region</div>
         <div className="chevron__right__icon">
           <i className="fas fa-chevron-right"></i>
         </div>
