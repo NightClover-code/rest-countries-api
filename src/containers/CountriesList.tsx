@@ -9,7 +9,9 @@ import CountriesItem from './CountriesItem';
 const CountriesList: React.FC = () => {
   //getting actions & state
   const { fetchCountries } = useActions();
-  const { loading, error, data } = useTypedSelector(state => state.countries);
+  const { loading, error, data } = useTypedSelector(
+    state => state.filteredCountries
+  );
   //fetching countries on first component mount
   useEffect(() => {
     fetchCountries();

@@ -15,7 +15,9 @@ export type CountriesAction =
   | FetchCountriesSuccess
   | SearchCountries
   | SearchCountriesSuccess
-  | SearchedCountriesError;
+  | SearchedCountriesError
+  | FilterCountries
+  | FilterCountriesSuccess;
 //actions interface
 interface FetchCountriesSuccess {
   type: ActionType.FETCH_COUNTRIES_SUCCESS;
@@ -39,4 +41,12 @@ interface SearchCountriesSuccess {
 interface SearchedCountriesError {
   type: ActionType.SEARCH_COUNTRIES_ERROR;
   payload: string;
+}
+//filter countries
+interface FilterCountries {
+  type: ActionType.FILTER_COUNTRIES;
+}
+interface FilterCountriesSuccess {
+  type: ActionType.FILTER_COUNTRIES_SUCCESS;
+  payload: CountryInterface[];
 }

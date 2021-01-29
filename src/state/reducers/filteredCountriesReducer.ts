@@ -2,6 +2,7 @@
 import { ActionType } from '../action-types';
 import { CountriesAction } from '../actions/fetchCountries';
 import { CountryInterface } from '../actions/fetchCountries';
+import { createSelector } from 'reselect';
 //state interface
 export interface CountriesState {
   loading: boolean;
@@ -15,25 +16,17 @@ const initialState = {
   data: [],
 };
 //reducer
-const countriesReducer = (
+const filteredCountriesReducer = (
   state: CountriesState = initialState,
   action: CountriesAction
 ) => {
   switch (action.type) {
-    case ActionType.FETCH_COUNTRIES_SUCCESS:
-      return { loading: false, error: null, data: action.payload };
-    case ActionType.FETCH_COUNTRIES:
+    case ActionType.FILTER_COUNTRIES:
       return { loading: true, error: null, data: [] };
-    case ActionType.FETCH_COUNTRIES_ERROR:
-      return { loading: false, error: action.payload, data: [] };
-    case ActionType.SEARCH_COUNTRIES_SUCCESS:
+    case ActionType.FILTER_COUNTRIES_SUCCESS:
       return { loading: false, error: null, data: action.payload };
-    case ActionType.SEARCH_COUNTRIES:
-      return { loading: true, error: null, data: [] };
-    case ActionType.SEARCH_COUNTRIES_ERROR:
-      return { loading: false, error: action.payload, data: [] };
     default:
       return state;
   }
 };
-export default countriesReducer;
+export default filteredCountriesReducer;

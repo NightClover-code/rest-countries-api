@@ -3,6 +3,7 @@ import { Dispatch } from 'redux';
 import countriesAPI from '../../api/coutries';
 import { CountriesAction } from '../actions/fetchCountries';
 import { ActionType } from '../action-types';
+import { RootState } from '../reducers';
 import { CountryInterface } from '../actions/fetchCountries';
 //format population number
 const numbersWithCommas = (x: number) => {
@@ -16,6 +17,9 @@ export const fetchCountries = () => async (
     //loading
     dispatch({
       type: ActionType.FETCH_COUNTRIES,
+    });
+    dispatch({
+      type: ActionType.FILTER_COUNTRIES,
     });
     //getting countries data
     const response = await countriesAPI.get('/all');
@@ -32,6 +36,10 @@ export const fetchCountries = () => async (
     //dispatching results
     dispatch({
       type: ActionType.FETCH_COUNTRIES_SUCCESS,
+      payload: countries,
+    });
+    dispatch({
+      type: ActionType.FILTER_COUNTRIES_SUCCESS,
       payload: countries,
     });
   } catch (err) {
@@ -75,4 +83,20 @@ export const searchCountries = (term: string) => async (
       payload: err.message,
     });
   }
+};
+//filter countries
+export const filterCountries = (countryId: string | null) => (
+  dispatch: Dispatch<CountriesAction>,
+  getState: () => RootState
+) => {
+  //filtering countries
+  const countries = getState().countries;
+  const filteredCountries = countries.data.filter(
+    (country: CountryInterface) => country.region.toLowerCase() === countryId
+  );
+  //dispatching results
+  dispatch({
+    type: ActionType.FILTER_COUNTRIES_SUCCESS,
+    payload: filteredCountries,
+  });
 };
