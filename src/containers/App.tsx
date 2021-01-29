@@ -6,14 +6,12 @@ import Filters from './Filters';
 import { Provider } from 'react-redux';
 import { store } from '../state';
 //importing components
-import Header from './Header';
 import SearchBar from './SearchBar';
 //app component
 const App: React.FC = () => {
   return (
     <Provider store={store}>
       <div className="app__container">
-        <Header />
         <div className="wrapper">
           <div className="flex__container">
             <SearchBar />

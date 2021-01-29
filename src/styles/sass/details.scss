@@ -1,0 +1,29 @@
+@import './variables';
+@import './prev_button';
+@import './detail_content';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.details__container {
+  margin: auto;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  font-size: 16px;
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: $very-dark-blue;
+  .wrapper {
+    max-width: 2000px;
+    min-width: 250px;
+    width: 85%;
+    margin: 100px auto auto auto;
+  }
+  .container {
+    max-width: 2000px;
+    min-width: 250px;
+    width: 86.5%;
+    margin: auto;
+  }
+}

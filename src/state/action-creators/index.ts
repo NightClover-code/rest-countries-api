@@ -1,6 +1,6 @@
 //importing types & api request file
 import { Dispatch } from 'redux';
-import countriesAPI from '../../api/coutries';
+import countriesAPI from '../../api/countries';
 import { CountriesAction } from '../actions/fetchCountries';
 import { ActionType } from '../action-types';
 import { RootState } from '../reducers';

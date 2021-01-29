@@ -1,0 +1,34 @@
+.previous__button__container {
+  padding: 5px;
+  width: 150px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  .previous__button {
+    width: 100%;
+    position: relative;
+    background-color: $dark-blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    border-radius: 5px;
+    padding: 2px 0px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: #ccc;
+    }
+    .arrow__icon {
+      //   padding-right: 10px;
+      padding-top: 3px;
+      width: 25px;
+      img {
+        width: 100%;
+      }
+    }
+    span {
+      margin-left: 7px;
+    }
+  }
+}
