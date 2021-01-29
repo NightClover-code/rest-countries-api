@@ -2,7 +2,6 @@
 import { ActionType } from '../action-types';
 import { CountriesAction } from '../actions/fetchCountries';
 import { CountryInterface } from '../actions/fetchCountries';
-import { createSelector } from 'reselect';
 //state interface
 export interface CountriesState {
   loading: boolean;
