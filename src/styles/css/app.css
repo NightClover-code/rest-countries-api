@@ -184,6 +184,11 @@ header .container .mode__container .mode {
   color: #ccc;
 }
 
+.loading {
+  font-size: 30px;
+  color: white;
+}
+
 .filters__container {
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.03);

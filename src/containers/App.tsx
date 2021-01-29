@@ -9,7 +9,6 @@ import { store } from '../state';
 import Header from './Header';
 import SearchBar from './SearchBar';
 //app component
-
 const App: React.FC = () => {
   return (
     <Provider store={store}>

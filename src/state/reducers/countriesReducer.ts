@@ -1,10 +1,11 @@
 //importing types
 import { ActionType } from '../action-types';
 import { CountriesAction } from '../actions/fetchCountries';
+import { CountryInterface } from '../actions/fetchCountries';
 //state interface
 interface CountriesState {
   loading: boolean;
-  data: object[];
+  data: CountryInterface[];
   error: string | null;
 }
 //initialState

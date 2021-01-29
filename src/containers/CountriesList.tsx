@@ -1,28 +1,22 @@
-//importing react hooks
+//importing react hooks & custom hooks
 import { useEffect } from 'react';
 import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
+import { CountryInterface } from '../state/actions/fetchCountries';
 //importing components
 import CountriesItem from './CountriesItem';
-//data interface
-export interface Country {
-  name: string;
-  population: number;
-  region: string;
-  capital: string;
-}
 //countries component
 const CountriesList: React.FC = () => {
   //getting actions & state
   const { fetchCountries } = useActions();
-  const { data } = useTypedSelector(state => state.countries);
+  const { loading, error, data } = useTypedSelector(state => state.countries);
   //fetching countries on first component mount
   useEffect(() => {
     fetchCountries();
-  }, [fetchCountries]);
+  }, []);
   //returned country items
   const returnedItems = data.map(
-    ({ name, population, region, capital, flag }: any) => {
+    ({ name, population, region, capital, flag }: CountryInterface) => {
       return (
         <CountriesItem
           key={name}
@@ -35,7 +29,17 @@ const CountriesList: React.FC = () => {
       );
     }
   );
-  return <div className="countries__list">{returnedItems}</div>;
+  return (
+    <div className="countries__list">
+      {loading && (
+        <div className="ui active dimmer">
+          <div className="ui loader"></div>
+        </div>
+      )}
+      {!loading && !error && returnedItems}
+      {error && <div className="error">{error}</div>}
+    </div>
+  );
 };
 
 export default CountriesList;

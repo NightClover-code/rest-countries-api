@@ -3,15 +3,20 @@ import { Dispatch } from 'redux';
 import countriesAPI from '../../api/coutries';
 import { CountriesAction } from '../actions/fetchCountries';
 import { ActionType } from '../action-types';
+import { CountryInterface } from '../actions/fetchCountries';
 //action creator
 export const fetchCountries = () => async (
   dispatch: Dispatch<CountriesAction>
 ) => {
   try {
+    //loading
+    dispatch({
+      type: ActionType.FETCH_COUNTRIES,
+    });
     //getting countries data
-    const { data } = await countriesAPI.get('/all');
+    const response = await countriesAPI.get('/all');
     //saving data
-    const countries = data.map((country: any) => {
+    const countries: CountryInterface[] = response.data.map((country: any) => {
       return {
         name: country.name,
         population: country.population,
