@@ -3,3 +3,10 @@
   color: #ccc;
   text-align: center;
 }
+.active {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.rotate {
+  transform: rotate(90deg) !important;
+}

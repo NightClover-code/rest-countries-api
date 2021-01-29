@@ -204,6 +204,16 @@ header .container .mode__container .mode {
   text-align: center;
 }
 
+.active {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.rotate {
+  -webkit-transform: rotate(90deg) !important;
+          transform: rotate(90deg) !important;
+}
+
 .filters__container {
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.03);
@@ -222,6 +232,7 @@ header .container .mode__container .mode {
           align-items: center;
   border-radius: 5px;
   color: white;
+  position: relative;
 }
 
 .filters__container .toggle__filters {
@@ -250,12 +261,22 @@ header .container .mode__container .mode {
   padding-right: 40px;
 }
 
+.filters__container .toggle__filters .chevron__right__icon {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
 .filters__container .regions {
-  display: none;
+  position: absolute;
+  top: 95%;
+  opacity: 0;
+  visibility: hidden;
   border-radius: 5px;
   background-color: #2b3945;
-  width: 100%;
+  width: 95%;
   margin-top: 5px;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .filters__container .regions .regions__list {

@@ -7,6 +7,7 @@
   align-items: center;
   border-radius: 5px;
   color: $white;
+  position: relative;
   .toggle__filters {
     background-color: $dark-blue;
     display: flex;
@@ -22,13 +23,20 @@
     .toggle__filters__text {
       padding-right: 40px;
     }
+    .chevron__right__icon {
+      transition: all 0.2s ease-in-out;
+    }
   }
   .regions {
-    display: none;
+    position: absolute;
+    top: 95%;
+    opacity: 0;
+    visibility: hidden;
     border-radius: 5px;
     background-color: $dark-blue;
-    width: 100%;
+    width: 95%;
     margin-top: 5px;
+    transition: opacity 0.2s ease-in-out;
     .regions__list {
       padding: 10px 0;
       li {
