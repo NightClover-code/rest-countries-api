@@ -4,7 +4,11 @@ import countriesAPI from '../../api/coutries';
 import { CountriesAction } from '../actions/fetchCountries';
 import { ActionType } from '../action-types';
 import { CountryInterface } from '../actions/fetchCountries';
-//action creator
+//format population number
+const numbersWithCommas = (x: number) => {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
+//action creators
 export const fetchCountries = () => async (
   dispatch: Dispatch<CountriesAction>
 ) => {
@@ -19,7 +23,7 @@ export const fetchCountries = () => async (
     const countries: CountryInterface[] = response.data.map((country: any) => {
       return {
         name: country.name,
-        population: country.population,
+        population: numbersWithCommas(country.population),
         region: country.region,
         capital: country.capital,
         flag: country.flag,
@@ -34,6 +38,40 @@ export const fetchCountries = () => async (
     //dispatching errors
     dispatch({
       type: ActionType.FETCH_COUNTRIES_ERROR,
+      payload: err.message,
+    });
+  }
+};
+//search countries
+export const searchCountries = (term: string) => async (
+  dispatch: Dispatch<CountriesAction>
+) => {
+  try {
+    //loading
+    dispatch({
+      type: ActionType.SEARCH_COUNTRIES,
+    });
+    //getting countries data
+    const response = await countriesAPI.get(`/name/${term}`);
+    //saving data
+    const countries: CountryInterface[] = response.data.map((country: any) => {
+      return {
+        name: country.name,
+        population: numbersWithCommas(country.population),
+        region: country.region,
+        capital: country.capital,
+        flag: country.flag,
+      };
+    });
+    //dispatching results
+    dispatch({
+      type: ActionType.SEARCH_COUNTRIES_SUCCESS,
+      payload: countries,
+    });
+  } catch (err) {
+    //dispatching errors
+    dispatch({
+      type: ActionType.SEARCH_COUNTRIES_ERROR,
       payload: err.message,
     });
   }

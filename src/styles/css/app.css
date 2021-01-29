@@ -101,8 +101,15 @@ header .container .mode__container .mode {
   color: #ccc;
 }
 
-.search__bar .search__bar__container .search__icon {
+.search__bar .search__bar__container button {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  color: white;
   cursor: pointer;
+}
+
+.search__bar .search__bar__container button .search__icon {
   padding-top: 2px;
 }
 
@@ -129,6 +136,13 @@ header .container .mode__container .mode {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.countries__list .countries__card:hover {
+  opacity: 0.8;
 }
 
 .countries__list .countries__card .countries__card__container {
@@ -184,9 +198,10 @@ header .container .mode__container .mode {
   color: #ccc;
 }
 
-.loading {
-  font-size: 30px;
-  color: white;
+.error {
+  font-size: 20px;
+  color: #ccc;
+  text-align: center;
 }
 
 .filters__container {

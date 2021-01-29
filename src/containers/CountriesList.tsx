@@ -37,7 +37,7 @@ const CountriesList: React.FC = () => {
         </div>
       )}
       {!loading && !error && returnedItems}
-      {error && <div className="error">{error}</div>}
+      {error && <p className="error">{error}</p>}
     </div>
   );
 };

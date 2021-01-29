@@ -32,9 +32,15 @@
         color: #ccc;
       }
     }
-    .search__icon {
+    button {
+      border: none;
+      outline: none;
+      background-color: inherit;
+      color: $white;
       cursor: pointer;
-      padding-top: 2px;
+      .search__icon {
+        padding-top: 2px;
+      }
     }
   }
 }

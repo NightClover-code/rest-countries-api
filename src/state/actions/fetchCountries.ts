@@ -3,7 +3,7 @@ import { ActionType } from '../action-types';
 //data interface
 export interface CountryInterface {
   name: string;
-  population: number;
+  population: string;
   region: string;
   flag: string;
   capital: string;
@@ -12,7 +12,10 @@ export interface CountryInterface {
 export type CountriesAction =
   | FetchCountries
   | FetchCountriesError
-  | FetchCountriesSuccess;
+  | FetchCountriesSuccess
+  | SearchCountries
+  | SearchCountriesSuccess
+  | SearchedCountriesError;
 //actions interface
 interface FetchCountriesSuccess {
   type: ActionType.FETCH_COUNTRIES_SUCCESS;
@@ -23,5 +26,17 @@ interface FetchCountries {
 }
 interface FetchCountriesError {
   type: ActionType.FETCH_COUNTRIES_ERROR;
+  payload: string;
+}
+//action interfaces
+interface SearchCountries {
+  type: ActionType.SEARCH_COUNTRIES;
+}
+interface SearchCountriesSuccess {
+  type: ActionType.SEARCH_COUNTRIES_SUCCESS;
+  payload: CountryInterface[];
+}
+interface SearchedCountriesError {
+  type: ActionType.SEARCH_COUNTRIES_ERROR;
   payload: string;
 }

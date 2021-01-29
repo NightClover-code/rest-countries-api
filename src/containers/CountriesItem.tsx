@@ -1,6 +1,6 @@
 interface Props {
   name: string;
-  population: number;
+  population: string;
   region: string;
   capital: string;
   flag: string;
