@@ -1,5 +1,4 @@
 .filters__container {
-  min-width: 200px;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.03);
   display: flex;
@@ -8,15 +7,12 @@
   align-items: center;
   border-radius: 5px;
   color: $white;
-  position: absolute;
-  right: 0;
   .toggle__filters {
     background-color: $dark-blue;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 20px;
-    width: 100%;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
@@ -28,12 +24,11 @@
     }
   }
   .regions {
-    visibility: hidden;
+    display: none;
     border-radius: 5px;
     background-color: $dark-blue;
     width: 100%;
     margin-top: 5px;
-
     .regions__list {
       padding: 10px 0;
       li {

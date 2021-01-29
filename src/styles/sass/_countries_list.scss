@@ -2,10 +2,7 @@
   display: grid;
   margin-top: 50px;
   margin-bottom: 50px;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(200px, 1fr)
-  );
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 60px;
   .countries__card {
     padding: 7px;
@@ -15,18 +12,30 @@
     align-items: center;
     border-radius: 10px;
     .countries__card__container {
+      height: 100%;
       background-color: $dark-blue;
       border-radius: 5px;
       overflow: hidden;
-      .flag img {
-        width: 100%;
+      .flag {
+        height: 45%;
+        @media screen and (max-width: 1200px) {
+          height: 50%;
+        }
+        @media screen and (max-width: 550px) {
+          height: auto;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
       .text__content {
         color: $white;
         padding: 0 20px;
         .name {
           font-size: 18px;
-          margin: 15px 0;
+          margin: 20px 0 15px 0;
         }
         .country__details__list {
           margin-bottom: 50px;

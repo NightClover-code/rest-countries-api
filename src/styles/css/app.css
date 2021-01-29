@@ -47,16 +47,14 @@ header .container .mode__container .mode {
   height: 60px;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.03);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  .search__bar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 .search__bar .search__bar__container {
@@ -68,9 +66,6 @@ header .container .mode__container .mode {
   display: -ms-flexbox;
   display: flex;
   color: white;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -82,7 +77,7 @@ header .container .mode__container .mode {
   background-color: inherit;
   border: none;
   outline: none;
-  width: 200px;
+  width: 100%;
   margin-left: 10px;
   padding: 0 10px;
   font-family: inherit;
@@ -137,13 +132,33 @@ header .container .mode__container .mode {
 }
 
 .countries__list .countries__card .countries__card__container {
+  height: 100%;
   background-color: #2b3945;
   border-radius: 5px;
   overflow: hidden;
 }
 
+.countries__list .countries__card .countries__card__container .flag {
+  height: 45%;
+}
+
+@media screen and (max-width: 1200px) {
+  .countries__list .countries__card .countries__card__container .flag {
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .countries__list .countries__card .countries__card__container .flag {
+    height: auto;
+  }
+}
+
 .countries__list .countries__card .countries__card__container .flag img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .countries__list .countries__card .countries__card__container .text__content {
@@ -153,7 +168,7 @@ header .container .mode__container .mode {
 
 .countries__list .countries__card .countries__card__container .text__content .name {
   font-size: 18px;
-  margin: 15px 0;
+  margin: 20px 0 15px 0;
 }
 
 .countries__list .countries__card .countries__card__container .text__content .country__details__list {
@@ -170,7 +185,6 @@ header .container .mode__container .mode {
 }
 
 .filters__container {
-  min-width: 200px;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.03);
   display: -webkit-box;
@@ -188,8 +202,6 @@ header .container .mode__container .mode {
           align-items: center;
   border-radius: 5px;
   color: white;
-  position: absolute;
-  right: 0;
 }
 
 .filters__container .toggle__filters {
@@ -204,7 +216,6 @@ header .container .mode__container .mode {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 15px 20px;
-  width: 100%;
   border-radius: 5px;
   cursor: pointer;
   -webkit-transition: all 0.2s ease-in-out;
@@ -220,7 +231,7 @@ header .container .mode__container .mode {
 }
 
 .filters__container .regions {
-  visibility: hidden;
+  display: none;
   border-radius: 5px;
   background-color: #2b3945;
   width: 100%;
@@ -273,6 +284,11 @@ header .container .mode__container .mode {
   display: -ms-flexbox;
   display: flex;
   padding-top: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 /*# sourceMappingURL=app.css.map */
