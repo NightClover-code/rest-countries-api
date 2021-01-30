@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 interface Props {
   name: string;
   population: string;
@@ -13,7 +14,7 @@ const CountriesItem: React.FC<Props> = ({
   flag,
 }) => {
   return (
-    <div className="countries__card">
+    <Link to={`/${name}`} className="countries__card">
       <div className="countries__card__container">
         <div className="flag">
           <img src={flag} alt="country-flag" />
@@ -33,7 +34,7 @@ const CountriesItem: React.FC<Props> = ({
           </ul>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

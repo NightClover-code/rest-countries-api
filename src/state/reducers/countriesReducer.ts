@@ -1,7 +1,6 @@
 //importing types
 import { ActionType } from '../action-types';
-import { CountriesAction } from '../actions/fetchCountries';
-import { CountryInterface } from '../actions/fetchCountries';
+import { CountryInterface, CountriesAction } from '../actions/fetchCountries';
 //state interface
 export interface CountriesState {
   loading: boolean;

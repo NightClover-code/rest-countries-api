@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { CountryInterface } from '../state/actions/fetchCountries';
+//random id's
+import { v4 as uuidv4 } from 'uuid';
 //importing components
 import CountriesItem from './CountriesItem';
 //countries component
@@ -18,10 +20,10 @@ const CountriesList: React.FC = () => {
   }, []);
   //returned country items
   const returnedItems = data.map(
-    ({ name, population, region, capital, flag }: CountryInterface) => {
+    ({ name, population, region, flag, capital }: CountryInterface) => {
       return (
         <CountriesItem
-          key={name}
+          key={uuidv4()}
           name={name}
           population={population}
           region={region}

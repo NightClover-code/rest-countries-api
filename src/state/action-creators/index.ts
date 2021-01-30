@@ -1,10 +1,13 @@
 //importing types & api request file
 import { Dispatch } from 'redux';
 import countriesAPI from '../../api/countries';
-import { CountriesAction } from '../actions/fetchCountries';
+import { CountriesAction, CountryInterface } from '../actions/fetchCountries';
+import {
+  DetailedCountryAction,
+  DetailedCountryInterface,
+} from '../actions/fetchCountry';
 import { ActionType } from '../action-types';
 import { RootState } from '../reducers';
-import { CountryInterface } from '../actions/fetchCountries';
 //format population number
 const numbersWithCommas = (x: number) => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -74,8 +77,8 @@ export const searchCountries = (term: string) => async (
         name: country.name,
         population: numbersWithCommas(country.population),
         region: country.region,
-        capital: country.capital,
         flag: country.flag,
+        capital: country.capital,
       };
     });
     //dispatching results
@@ -114,4 +117,56 @@ export const filterCountries = (countryId: string | null) => (
     type: ActionType.FILTER_COUNTRIES_SUCCESS,
     payload: filteredCountries,
   });
+};
+//fetch country
+export const fetchCountry = (name: string) => async (
+  dispatch: Dispatch<DetailedCountryAction>
+) => {
+  try {
+    //loading
+    dispatch({
+      type: ActionType.FETCH_COUNTRY,
+    });
+    //getting country data
+    const response = await countriesAPI.get(`/name/${name}`);
+    //saving country detailed info
+    const country: DetailedCountryInterface[] = response.data.map(
+      ({
+        name,
+        population,
+        region,
+        nativeName,
+        flag,
+        capital,
+        subregion,
+        topLevelDomain,
+        currencies,
+        languages,
+      }: any) => {
+        return {
+          name,
+          population: numbersWithCommas(population),
+          region,
+          flag,
+          capital,
+          nativeName,
+          subregion,
+          topLevelDomain: topLevelDomain[0],
+          currencies: currencies.map((currency: any) => currency.name),
+          languages: languages.map((lang: any) => lang.name),
+        };
+      }
+    );
+    //dispatching results
+    dispatch({
+      type: ActionType.FETCH_COUNTRY_SUCCESS,
+      payload: country,
+    });
+  } catch (err) {
+    //dispatching errors
+    dispatch({
+      type: ActionType.FETCH_COUNTRY_ERROR,
+      payload: err.message,
+    });
+  }
 };
