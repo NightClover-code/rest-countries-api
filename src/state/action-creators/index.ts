@@ -34,7 +34,7 @@ export const fetchCountries = () => async (
         region: country.region,
         capital: country.capital,
         flag: country.flag,
-        code: country.alpha2Code,
+        code: country.alpha3Code,
       };
     });
     //dispatching results
@@ -79,7 +79,7 @@ export const searchCountries = (term: string) => async (
         population: numbersWithCommas(country.population),
         region: country.region,
         flag: country.flag,
-        code: country.alpha2Code,
+        code: country.alpha3Code,
         capital: country.capital,
       };
     });
@@ -155,7 +155,12 @@ export const fetchCountry = (code: string) => async (
       subregion,
       topLevelDomain: topLevelDomain[0],
       currencies: currencies.map((currency: any) => currency.name),
-      languages: languages.map((lang: any) => lang.name),
+      languages: languages.map((lang: any, index: number) => {
+        if (languages.length - 1 === index) {
+          return `${lang.name}`;
+        }
+        return `${lang.name}, `;
+      }),
     };
     //dispatching results
     dispatch({
