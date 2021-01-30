@@ -5,6 +5,7 @@ interface Props {
   population: string;
   region: string;
   capital: string;
+  code: string;
   flag: string;
 }
 const CountriesItem: React.FC<Props> = ({
@@ -13,13 +14,14 @@ const CountriesItem: React.FC<Props> = ({
   region,
   capital,
   flag,
+  code,
 }) => {
-  const { setCurrentName } = useActions();
+  const { setCurrentCode } = useActions();
   return (
     <Link
-      to={`/${name}`}
+      to={`/${code}`}
       className="countries__card"
-      onClick={() => setCurrentName(name)}
+      onClick={() => setCurrentCode(code)}
     >
       <div className="countries__card__container">
         <div className="flag">

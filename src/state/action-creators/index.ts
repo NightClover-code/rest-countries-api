@@ -34,6 +34,7 @@ export const fetchCountries = () => async (
         region: country.region,
         capital: country.capital,
         flag: country.flag,
+        code: country.alpha2Code,
       };
     });
     //dispatching results
@@ -78,6 +79,7 @@ export const searchCountries = (term: string) => async (
         population: numbersWithCommas(country.population),
         region: country.region,
         flag: country.flag,
+        code: country.alpha2Code,
         capital: country.capital,
       };
     });
@@ -119,7 +121,7 @@ export const filterCountries = (countryId: string | null) => (
   });
 };
 //fetch country
-export const fetchCountry = (name: string) => async (
+export const fetchCountry = (code: string) => async (
   dispatch: Dispatch<DetailedCountryAction>
 ) => {
   try {
@@ -128,35 +130,33 @@ export const fetchCountry = (name: string) => async (
       type: ActionType.FETCH_COUNTRY,
     });
     //getting country data
-    const response = await countriesAPI.get(`/name/${name}`);
+    const response = await countriesAPI.get(`/alpha/${code}`);
+    //destructuring info from data
+    const {
+      name,
+      population,
+      region,
+      nativeName,
+      flag,
+      capital,
+      subregion,
+      topLevelDomain,
+      currencies,
+      languages,
+    } = response.data;
     //saving country detailed info
-    const country: DetailedCountryInterface[] = response.data.map(
-      ({
-        name,
-        population,
-        region,
-        nativeName,
-        flag,
-        capital,
-        subregion,
-        topLevelDomain,
-        currencies,
-        languages,
-      }: any) => {
-        return {
-          name,
-          population: numbersWithCommas(population),
-          region,
-          flag,
-          capital,
-          nativeName,
-          subregion,
-          topLevelDomain: topLevelDomain[0],
-          currencies: currencies.map((currency: any) => currency.name),
-          languages: languages.map((lang: any) => lang.name),
-        };
-      }
-    );
+    const country: DetailedCountryInterface = {
+      name,
+      population: numbersWithCommas(population),
+      region,
+      flag,
+      capital,
+      nativeName,
+      subregion,
+      topLevelDomain: topLevelDomain[0],
+      currencies: currencies.map((currency: any) => currency.name),
+      languages: languages.map((lang: any) => lang.name),
+    };
     //dispatching results
     dispatch({
       type: ActionType.FETCH_COUNTRY_SUCCESS,
@@ -171,9 +171,9 @@ export const fetchCountry = (name: string) => async (
   }
 };
 //cuurent country name
-export const setCurrentName = (name: string) => {
+export const setCurrentCode = (code: string) => {
   return {
-    type: ActionType.CURRENT_COUNTRY_NAME,
-    payload: name,
+    type: ActionType.CURRENT_COUNTRY_CODE,
+    payload: code,
   };
 };

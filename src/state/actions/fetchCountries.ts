@@ -7,6 +7,7 @@ export interface CountryInterface {
   region: string;
   flag: string;
   capital: string;
+  code: string;
 }
 //typeAction
 export type CountriesAction =

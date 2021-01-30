@@ -20,7 +20,7 @@ const CountriesList: React.FC = () => {
   }, []);
   //returned country items
   const returnedItems = data.map(
-    ({ name, population, region, flag, capital }: CountryInterface) => {
+    ({ name, population, region, flag, capital, code }: CountryInterface) => {
       return (
         <CountriesItem
           key={uuidv4()}
@@ -29,6 +29,7 @@ const CountriesList: React.FC = () => {
           region={region}
           capital={capital}
           flag={flag}
+          code={code}
         />
       );
     }

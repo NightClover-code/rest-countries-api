@@ -12,7 +12,7 @@ const AppRouter: React.FC = () => {
       <Provider store={store}>
         <Header />
         <Route path="/" component={App} exact />
-        <Route path="/:name" component={CountryDetails} />
+        <Route path="/:code" component={CountryDetails} />
       </Provider>
     </BrowserRouter>
   );

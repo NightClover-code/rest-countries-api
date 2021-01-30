@@ -8,13 +8,13 @@ import {
 interface DetailedCountryState {
   loading: boolean;
   error: string | null;
-  data: DetailedCountryInterface[];
+  data: DetailedCountryInterface | null;
 }
 //initialState
 const initialState = {
   loading: false,
   error: null,
-  data: [],
+  data: null,
 };
 //reducer
 const fetchCountry = (
@@ -23,7 +23,7 @@ const fetchCountry = (
 ) => {
   switch (action.type) {
     case ActionType.FETCH_COUNTRY:
-      return { loading: true, error: null, data: [] };
+      return { loading: true, error: null, data: null };
     case ActionType.FETCH_COUNTRY_SUCCESS:
       return {
         loading: false,
@@ -31,7 +31,7 @@ const fetchCountry = (
         data: action.payload,
       };
     case ActionType.FETCH_COUNTRY_ERROR:
-      return { loading: false, error: action.payload, data: [] };
+      return { loading: false, error: action.payload, data: null };
     default:
       return state;
   }

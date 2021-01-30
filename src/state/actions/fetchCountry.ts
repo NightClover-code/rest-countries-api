@@ -24,7 +24,7 @@ interface FetchCountry {
 }
 interface FetchCountrySuccess {
   type: ActionType.FETCH_COUNTRY_SUCCESS;
-  payload: DetailedCountryInterface[];
+  payload: DetailedCountryInterface;
 }
 interface FetchCountryError {
   type: ActionType.FETCH_COUNTRY_ERROR;

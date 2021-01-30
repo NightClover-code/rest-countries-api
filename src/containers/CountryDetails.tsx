@@ -9,31 +9,32 @@ import { useEffect } from 'react';
 //importing components
 import PreviousButton from '../components/PreviousButton';
 import DetailContent from '../containers/DetailContent';
-import { DetailedCountryInterface } from '../state/actions/fetchCountry';
 //details component
 const CountryDetails: React.FC = () => {
   //getting actions & state
   const { fetchCountry } = useActions();
   const { loading, error, data } = useTypedSelector(state => state.country);
-  const name = useTypedSelector(state => state.currentName);
+  const currentCode = useTypedSelector(state => state.currentCode);
   //fetching countries on first component mount
   useEffect(() => {
-    fetchCountry(name);
-  }, [name]);
-  //returned country
-  const returnedItem = data.map(
-    ({
-      name,
-      population,
-      region,
-      nativeName,
-      flag,
-      capital,
-      subregion,
-      topLevelDomain,
-      currencies,
-      languages,
-    }: DetailedCountryInterface) => {
+    fetchCountry(currentCode);
+  }, [currentCode]);
+  //returning detail content item;
+  const returnDetail = () => {
+    //returned country{
+    if (data) {
+      const {
+        name,
+        population,
+        region,
+        nativeName,
+        flag,
+        capital,
+        subregion,
+        topLevelDomain,
+        currencies,
+        languages,
+      } = data;
       return (
         <DetailContent
           key={uuidv4()}
@@ -50,7 +51,7 @@ const CountryDetails: React.FC = () => {
         />
       );
     }
-  );
+  };
   return (
     <div className="details__container">
       {loading && (
@@ -62,7 +63,7 @@ const CountryDetails: React.FC = () => {
         <PreviousButton />
       </div>
       <div className="container">
-        {!loading && !error && returnedItem}
+        {!loading && !error && returnDetail()}
         {error && <p className="error">{error}</p>}
       </div>
     </div>
