@@ -10,34 +10,36 @@ const DetailContent = () => {
       </div>
       <div className="details__text__content">
         <h1>Belgium</h1>
-        <ul className="first__list">
-          <li>
-            Native Name: <span>Belgie</span>
-          </li>
-          <li>
-            Population: <span>Belgie</span>
-          </li>
-          <li>
-            Region: <span>Belgie</span>
-          </li>
-          <li>
-            Sub Region: <span>Belgie</span>
-          </li>
-          <li>
-            Capital: <span>Belgie</span>
-          </li>
-        </ul>
-        <ul className="second__list">
-          <li>
-            Top Level Domain: <span>Belgie</span>
-          </li>
-          <li>
-            Currencies: <span>Belgie</span>
-          </li>
-          <li>
-            Languages: <span>Belgie</span>
-          </li>
-        </ul>
+        <div className="detail__lists">
+          <ul className="first__list">
+            <li>
+              Native Name: <span>Belgie</span>
+            </li>
+            <li>
+              Population: <span>Belgie</span>
+            </li>
+            <li>
+              Region: <span>Belgie</span>
+            </li>
+            <li>
+              Sub Region: <span>Belgie</span>
+            </li>
+            <li>
+              Capital: <span>Belgie</span>
+            </li>
+          </ul>
+          <ul className="second__list">
+            <li>
+              Top Level Domain: <span>Belgie</span>
+            </li>
+            <li>
+              Currencies: <span>Belgie</span>
+            </li>
+            <li>
+              Languages: <span>Belgie</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
