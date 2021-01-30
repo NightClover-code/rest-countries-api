@@ -142,6 +142,7 @@ export const fetchCountry = (code: string) => async (
       subregion,
       topLevelDomain,
       currencies,
+      borders,
       languages,
     } = response.data;
     //saving country detailed info
@@ -152,6 +153,7 @@ export const fetchCountry = (code: string) => async (
       flag,
       capital,
       nativeName,
+      borders,
       subregion,
       topLevelDomain: topLevelDomain[0],
       currencies: currencies.map((currency: any) => currency.name),

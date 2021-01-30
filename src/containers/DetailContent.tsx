@@ -47,10 +47,10 @@ const DetailContent: React.FC<Props> = ({
               Region: <span>{region}</span>
             </li>
             <li>
-              Sub Region: <span>{subregion}</span>
+              Sub Region: <span>{subregion !== '' ? subregion : 'none'}</span>
             </li>
             <li>
-              Capital: <span>{capital}</span>
+              Capital: <span>{capital !== '' ? capital : 'none'}</span>
             </li>
           </ul>
           <ul className="second__list">
