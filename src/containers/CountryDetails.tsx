@@ -15,10 +15,11 @@ const CountryDetails: React.FC = () => {
   //getting actions & state
   const { fetchCountry } = useActions();
   const { loading, error, data } = useTypedSelector(state => state.country);
+  const name = useTypedSelector(state => state.currentName);
   //fetching countries on first component mount
   useEffect(() => {
-    fetchCountry('Albania');
-  }, []);
+    fetchCountry(name);
+  }, [name]);
   //returned country
   const returnedItem = data.map(
     ({
@@ -52,10 +53,18 @@ const CountryDetails: React.FC = () => {
   );
   return (
     <div className="details__container">
+      {loading && (
+        <div className="ui active dimmer">
+          <div className="ui loader"></div>
+        </div>
+      )}
       <div className="wrapper">
         <PreviousButton />
       </div>
-      <div className="container">{returnedItem}</div>
+      <div className="container">
+        {!loading && !error && returnedItem}
+        {error && <p className="error">{error}</p>}
+      </div>
     </div>
   );
 };

@@ -170,3 +170,10 @@ export const fetchCountry = (name: string) => async (
     });
   }
 };
+//cuurent country name
+export const setCurrentName = (name: string) => {
+  return {
+    type: ActionType.CURRENT_COUNTRY_NAME,
+    payload: name,
+  };
+};

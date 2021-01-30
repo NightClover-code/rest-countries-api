@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useActions } from '../hooks/useActions';
 interface Props {
   name: string;
   population: string;
@@ -13,8 +14,13 @@ const CountriesItem: React.FC<Props> = ({
   capital,
   flag,
 }) => {
+  const { setCurrentName } = useActions();
   return (
-    <Link to={`/${name}`} className="countries__card">
+    <Link
+      to={`/${name}`}
+      className="countries__card"
+      onClick={() => setCurrentName(name)}
+    >
       <div className="countries__card__container">
         <div className="flag">
           <img src={flag} alt="country-flag" />
