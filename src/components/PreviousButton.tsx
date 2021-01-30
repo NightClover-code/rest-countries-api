@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-const PreviousButton = () => {
+const PreviousButton: React.FC = () => {
   return (
     <div className="previous__button__container">
       <Link to="/" className="previous__button">

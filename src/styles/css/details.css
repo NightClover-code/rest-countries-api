@@ -3,7 +3,6 @@
   width: 150px;
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 5px;
-  margin-top: 100px;
 }
 
 .previous__button__container .previous__button {
@@ -45,22 +44,118 @@
   margin-left: 7px;
 }
 
+.border__countries__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 40px 0;
+}
+
+@media screen and (max-width: 650px) {
+  .border__countries__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+.border__countries__container h4 {
+  padding-right: 20px;
+}
+
+@media screen and (max-width: 650px) {
+  .border__countries__container h4 {
+    padding-bottom: 15px;
+  }
+}
+
+.border__countries__container .border__countries {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.border__countries__container .border__countries .border__country__container {
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+}
+
+.border__countries__container .border__countries .border__country__container .border__country {
+  background-color: #2b3945;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.border__countries__container .border__countries .border__country__container .border__country:hover {
+  color: #ccc;
+}
+
+@media screen and (max-width: 1100px) {
+  .border__countries__container .border__countries .border__country__container .border__country {
+    padding: 5px 30px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .border__countries__container .border__countries .border__country__container .border__country {
+    padding: 5px 15px;
+  }
+}
+
 .detail__content {
   margin-top: 50px;
   color: white;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(700px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-  gap: 150px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: (minmax(300px, 1500px))[2];
+      grid-template-columns: repeat(2, minmax(300px, 1500px));
+  gap: 130px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
   .detail__content {
-    -ms-grid-columns: (minmax(100px, 800px))[auto-fill];
-        grid-template-columns: repeat(auto-fill, minmax(100px, 800px));
+    gap: 80px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .detail__content {
+    -ms-grid-columns: minmax(100px, 800px);
+        grid-template-columns: minmax(100px, 800px);
   }
 }
 
@@ -83,8 +178,9 @@
 }
 
 .detail__content .details__text__content {
-  margin-top: 80px;
-  width: 70%;
+  margin-top: 50px;
+  width: 90%;
+  margin: auto;
 }
 
 .detail__content .details__text__content h1 {
@@ -99,6 +195,18 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media screen and (max-width: 650px) {
+  .detail__content .details__text__content .detail__lists {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  .detail__content .details__text__content .detail__lists .first__list {
+    margin-bottom: 30px;
+  }
 }
 
 .detail__content .details__text__content .detail__lists li {
@@ -139,5 +247,11 @@
   min-width: 250px;
   width: 86.5%;
   margin: auto;
+}
+
+@media screen and (max-width: 650px) {
+  .details__container .container {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=details.css.map */

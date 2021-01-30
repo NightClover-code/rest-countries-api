@@ -2,11 +2,15 @@
   margin-top: 50px;
   color: $white;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
-  grid-template-rows: auto;
-  gap: 150px;
-  @media screen and( max-width: 800px) {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 800px));
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, minmax(300px, 1500px));
+  gap: 130px;
+  @media screen and( max-width: 1100px) {
+    gap: 80px;
+  }
+  @media screen and( max-width: 1100px) {
+    grid-template-columns: minmax(100px, 800px);
   }
   .flag__container {
     padding: 20px;
@@ -23,8 +27,10 @@
     }
   }
   .details__text__content {
-    margin-top: 80px;
-    width: 70%;
+    margin-top: 50px;
+    width: 90%;
+    margin: auto;
+
     h1 {
       font-size: 35px;
       margin-bottom: 30px;
@@ -32,6 +38,12 @@
     .detail__lists {
       display: flex;
       justify-content: space-between;
+      @media screen and( max-width:650px) {
+        flex-flow: column nowrap;
+        .first__list {
+          margin-bottom: 30px;
+        }
+      }
       li {
         list-style: none;
         line-height: 2.2;

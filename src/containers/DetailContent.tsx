@@ -1,6 +1,7 @@
 import React from 'react';
-
-const DetailContent = () => {
+import BorderCountries from './BorderCountries';
+//detail content component
+const DetailContent: React.FC = () => {
   return (
     <div className="detail__content">
       <div className="flag__container">
@@ -40,6 +41,7 @@ const DetailContent = () => {
             </li>
           </ul>
         </div>
+        <BorderCountries />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 @import './variables';
 @import './prev_button';
+@import './border_countries';
 @import './detail_content';
 * {
   margin: 0;
@@ -25,5 +26,8 @@
     min-width: 250px;
     width: 86.5%;
     margin: auto;
+    @media screen and( max-width: 650px) {
+      width: 90%;
+    }
   }
 }
