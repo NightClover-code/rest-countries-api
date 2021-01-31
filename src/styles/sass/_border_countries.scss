@@ -13,8 +13,8 @@
     }
   }
   .border__countries {
+    flex-wrap: wrap;
     display: flex;
-    justify-content: center;
     align-items: center;
     .border__country__container {
       padding: 5px;
