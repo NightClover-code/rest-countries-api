@@ -15,7 +15,6 @@ const CountryDetails: React.FC = () => {
   const { fetchCountry } = useActions();
   const { loading, error, data } = useTypedSelector(state => state.country);
   const currentCode = useTypedSelector(state => state.currentCode);
-  //fetching countries on first component mount
   useEffect(() => {
     fetchCountry(currentCode);
   }, [currentCode]);

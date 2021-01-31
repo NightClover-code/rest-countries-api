@@ -96,11 +96,11 @@ export const searchCountries = (term: string) => async (
     //dispatching errors
     dispatch({
       type: ActionType.SEARCH_COUNTRIES_ERROR,
-      payload: err.message,
+      payload: "Can't find the country you're looking for",
     });
     dispatch({
       type: ActionType.FILTER_COUNTRIES_ERROR,
-      payload: err.message,
+      payload: "Can't find the country you're looking for",
     });
   }
 };
