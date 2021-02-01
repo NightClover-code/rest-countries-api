@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useActions } from '../hooks/useActions';
+import { useTypedSelector } from '../hooks/useTypedSelector';
 interface Props {
   name: string;
   population: string;
@@ -16,11 +17,15 @@ const CountriesItem: React.FC<Props> = ({
   flag,
   code,
 }) => {
+  //getting state & actions
   const { setCurrentCode } = useActions();
+  const isLightMode = useTypedSelector(state => state.isLightMode);
   return (
     <Link
       to={`/${code}`}
-      className="countries__card"
+      className={`countries__card ${
+        isLightMode ? 'countries__card__light' : ''
+      }`}
       onClick={() => setCurrentCode(code)}
     >
       <div className="countries__card__container">

@@ -54,3 +54,14 @@
     }
   }
 }
+.details__light {
+  .flag__container {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+  .details__text__content {
+    color: $dark-blue;
+    .detail__lists li span {
+      color: rgb(104, 102, 102);
+    }
+  }
+}

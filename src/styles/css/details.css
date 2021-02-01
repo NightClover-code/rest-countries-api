@@ -44,6 +44,15 @@
   margin-left: 7px;
 }
 
+.previous__button__light {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.previous__button__light .previous__button {
+  background-color: white;
+  color: #2b3945;
+}
+
 .border__countries__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -127,6 +136,15 @@
   .border__countries__container .border__countries .border__country__container .border__country {
     padding: 5px 15px;
   }
+}
+
+.border__country__light {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+.border__country__light .border__country {
+  background-color: white !important;
+  color: #2b3945 !important;
 }
 
 .detail__content {
@@ -217,6 +235,18 @@
   color: #ccc;
 }
 
+.details__light .flag__container {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.details__light .details__text__content {
+  color: #2b3945;
+}
+
+.details__light .details__text__content .detail__lists li span {
+  color: #686666;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -252,5 +282,9 @@
   .details__container .container {
     width: 90%;
   }
+}
+
+.details__light {
+  background-color: #fafafa;
 }
 /*# sourceMappingURL=details.css.map */

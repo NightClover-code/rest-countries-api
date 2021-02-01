@@ -44,3 +44,18 @@
     }
   }
 }
+.search__bar__light {
+  background-color: rgba(0, 0, 0, 0.02);
+  .search__bar__container {
+    background-color: $white;
+    input {
+      color: $dark-gray;
+      &::placeholder {
+        color: rgb(104, 102, 102);
+      }
+    }
+    button {
+      color: rgb(104, 102, 102);
+    }
+  }
+}

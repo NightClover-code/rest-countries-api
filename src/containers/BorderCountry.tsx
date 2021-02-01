@@ -9,9 +9,9 @@ import countries from 'i18n-iso-countries';
 const BorderCountry: React.FC = () => {
   //iniitalizinig the converter with english language
   countries.registerLocale(require('i18n-iso-countries/langs/en.json'));
-  //getting state
+  //getting state & actions
   const { error, data } = useTypedSelector(state => state.country);
-  //getting actions
+  const isLightMode = useTypedSelector(state => state.isLightMode);
   const { setCurrentCode } = useActions();
   //returning border components
   if (data) {
@@ -20,7 +20,9 @@ const BorderCountry: React.FC = () => {
     const returnedBorders = lessBorders.map((border: string) => {
       return (
         <div
-          className="border__country__container"
+          className={`border__country__container ${
+            isLightMode ? 'border__country__light' : ''
+          }`}
           key={uuidv4()}
           //fetching country on border click
           onClick={() => setCurrentCode(border)}

@@ -44,3 +44,10 @@
     }
   }
 }
+.border__country__light {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  .border__country {
+    background-color: $white !important;
+    color: $dark-blue !important;
+  }
+}

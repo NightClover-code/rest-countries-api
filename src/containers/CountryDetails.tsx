@@ -7,7 +7,7 @@ import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { useEffect } from 'react';
 //importing components
-import PreviousButton from '../components/PreviousButton';
+import PreviousButton from './PreviousButton';
 import DetailContent from '../containers/DetailContent';
 //details component
 const CountryDetails: React.FC = () => {
@@ -15,6 +15,7 @@ const CountryDetails: React.FC = () => {
   const { fetchCountry } = useActions();
   const { loading, error, data } = useTypedSelector(state => state.country);
   const currentCode = useTypedSelector(state => state.currentCode);
+  const isLightMode = useTypedSelector(state => state.isLightMode);
   useEffect(() => {
     fetchCountry(currentCode);
   }, [currentCode]);
@@ -52,7 +53,9 @@ const CountryDetails: React.FC = () => {
     }
   };
   return (
-    <div className="details__container">
+    <div
+      className={`details__container ${isLightMode ? 'details__light' : ''}`}
+    >
       {loading && (
         <div className="ui active dimmer">
           <div className="ui loader"></div>

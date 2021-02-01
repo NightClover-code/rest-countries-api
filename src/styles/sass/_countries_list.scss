@@ -55,4 +55,16 @@
       }
     }
   }
+  .countries__card__light {
+    background-color: rgba(0, 0, 0, 0.02);
+    .countries__card__container {
+      background-color: $white;
+      .text__content {
+        color: $very-dark-blue-light-mode;
+        .country__details__list li span {
+          color: rgb(104, 102, 102);
+        }
+      }
+    }
+  }
 }

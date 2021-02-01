@@ -4,8 +4,8 @@ header {
   left: 0;
   top: 0;
   background-color: #2b3945;
-  -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
   z-index: 10;
 }
 
@@ -41,6 +41,14 @@ header .container .mode__container {
 
 header .container .mode__container .mode {
   margin-left: 10px;
+}
+
+.header__light {
+  background-color: white;
+}
+
+.header__light .container {
+  color: #111517;
 }
 
 .search__bar {
@@ -112,6 +120,38 @@ header .container .mode__container .mode {
 
 .search__bar .search__bar__container button .search__icon {
   padding-top: 2px;
+}
+
+.search__bar__light {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.search__bar__light .search__bar__container {
+  background-color: white;
+}
+
+.search__bar__light .search__bar__container input {
+  color: #030303;
+}
+
+.search__bar__light .search__bar__container input::-webkit-input-placeholder {
+  color: #686666;
+}
+
+.search__bar__light .search__bar__container input:-ms-input-placeholder {
+  color: #686666;
+}
+
+.search__bar__light .search__bar__container input::-ms-input-placeholder {
+  color: #686666;
+}
+
+.search__bar__light .search__bar__container input::placeholder {
+  color: #686666;
+}
+
+.search__bar__light .search__bar__container button {
+  color: #686666;
 }
 
 .countries__list {
@@ -197,6 +237,22 @@ header .container .mode__container .mode {
 
 .countries__list .countries__card .countries__card__container .text__content .country__details__list li span {
   color: #ccc;
+}
+
+.countries__list .countries__card__light {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.countries__list .countries__card__light .countries__card__container {
+  background-color: white;
+}
+
+.countries__list .countries__card__light .countries__card__container .text__content {
+  color: #111517;
+}
+
+.countries__list .countries__card__light .countries__card__container .text__content .country__details__list li span {
+  color: #686666;
 }
 
 .error {
@@ -298,6 +354,25 @@ header .container .mode__container .mode {
   color: #ccc;
 }
 
+.filters__light {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.filters__light .toggle__filters {
+  background-color: white;
+  color: #030303;
+}
+
+.filters__light .toggle__filters:hover {
+  opacity: 0.9;
+  color: #030303;
+}
+
+.filters__light .regions {
+  background-color: white;
+  color: #030303;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -333,5 +408,9 @@ header .container .mode__container .mode {
   position: relative;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.app__light {
+  background-color: #fafafa;
 }
 /*# sourceMappingURL=app.css.map */

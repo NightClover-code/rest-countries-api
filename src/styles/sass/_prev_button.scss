@@ -20,7 +20,6 @@
       color: #ccc;
     }
     .arrow__icon {
-      //   padding-right: 10px;
       padding-top: 3px;
       width: 25px;
       img {
@@ -30,5 +29,12 @@
     span {
       margin-left: 7px;
     }
+  }
+}
+.previous__button__light {
+  background-color: rgba(0, 0, 0, 0.02);
+  .previous__button {
+    background-color: $white;
+    color: $dark-blue;
   }
 }

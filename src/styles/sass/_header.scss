@@ -4,7 +4,7 @@ header {
   left: 0;
   top: 0;
   background-color: $dark-blue;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
   z-index: 10;
   .container {
     padding: 15px 0;
@@ -27,5 +27,11 @@ header {
         margin-left: 10px;
       }
     }
+  }
+}
+.header__light {
+  background-color: $white;
+  .container {
+    color: $very-dark-blue-light-mode;
   }
 }

@@ -53,3 +53,18 @@
     }
   }
 }
+.filters__light {
+  background-color: rgba(0, 0, 0, 0.02);
+  .toggle__filters {
+    background-color: $white;
+    color: $dark-gray;
+    &:hover {
+      opacity: 0.9;
+      color: $dark-gray;
+    }
+  }
+  .regions {
+    background-color: $white;
+    color: $dark-gray;
+  }
+}
