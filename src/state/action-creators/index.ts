@@ -9,7 +9,7 @@ import {
 import { ActionType } from '../action-types';
 import { RootState } from '../reducers';
 //format population number
-const numbersWithCommas = (x: number) => {
+const numbersWithCommas = (x: number): string => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
 //action creators
@@ -177,7 +177,7 @@ export const fetchCountry = (code: string) => async (
     });
   }
 };
-//cuurent country name
+//current country code
 export const setCurrentCode = (code: string) => {
   return {
     type: ActionType.CURRENT_COUNTRY_CODE,

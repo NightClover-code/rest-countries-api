@@ -12,11 +12,30 @@ import DetailContent from '../containers/DetailContent';
 //details component
 const CountryDetails: React.FC = () => {
   //getting actions & state
-  const { fetchCountry } = useActions();
+  const { fetchCountry, setCurrentCode } = useActions();
   const { loading, error, data } = useTypedSelector(state => state.country);
   const currentCode = useTypedSelector(state => state.currentCode);
+
+  useEffect(() => {
+    //getting code from local storage
+    const getCurrentCode = () => {
+      if (localStorage.getItem('currentCode') === null) {
+        localStorage.setItem('currentCode', JSON.stringify(''));
+      } else {
+        let currentCodeLocal = JSON.parse(localStorage.getItem('currentCode')!);
+        setCurrentCode(currentCodeLocal);
+      }
+    };
+    //saving items to localStorage on first render
+    getCurrentCode();
+  }, []);
   useEffect(() => {
     fetchCountry(currentCode);
+    //saving currentCode to local storage based on currentCode change
+    const saveToLocal = () => {
+      localStorage.setItem('currentCode', JSON.stringify(currentCode));
+    };
+    saveToLocal();
   }, [currentCode]);
   //returning detail content item;
   const returnDetail = () => {
