@@ -9,8 +9,9 @@ import { useTypedSelector } from '../hooks/useTypedSelector';
 //app routes
 const AppRouter: React.FC = () => {
   //getting actions & state
-  const { setCurrentCode } = useActions();
+  const { setCurrentCode, setColorMode } = useActions();
   const currentCode = useTypedSelector(state => state.currentCode);
+  const isLightMode = useTypedSelector(state => state.isLightMode);
   useEffect(() => {
     //getting code from local storage
     const getCurrentCode = () => {
@@ -31,6 +32,26 @@ const AppRouter: React.FC = () => {
     };
     saveToLocal();
   }, [currentCode]);
+  useEffect(() => {
+    //getting color mode from local storage
+    const getCurrentMode = () => {
+      if (localStorage.getItem('currentMode') === null) {
+        localStorage.setItem('currentMode', JSON.stringify(false));
+      } else {
+        let currentModeLocal = JSON.parse(localStorage.getItem('currentMode')!);
+        setColorMode(currentModeLocal);
+      }
+    };
+    //saving items to localStorage on first render
+    getCurrentMode();
+  }, []);
+  useEffect(() => {
+    //saving currentMode to local storage based on currentMode change
+    const saveToLocal = () => {
+      localStorage.setItem('currentMode', JSON.stringify(isLightMode));
+    };
+    saveToLocal();
+  }, [isLightMode]);
   return (
     <BrowserRouter>
       <Header />

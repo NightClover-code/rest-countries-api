@@ -19,4 +19,5 @@ export enum ActionType {
   CURRENT_COUNTRY_CODE = 'CURRENT_COUNTRY_CODE',
   //current mode: light mode / dark mode
   CHANGE_CURRENT_MODE = 'CHANGE_CURRENT_MODE',
+  SET_CURRENT_MODE = 'SET_CURRENT_MODE',
 }

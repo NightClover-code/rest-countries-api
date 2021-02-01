@@ -195,3 +195,10 @@ export const changeColorMode = () => {
     type: ActionType.CHANGE_CURRENT_MODE,
   };
 };
+//setting color mode
+export const setColorMode = (value: boolean) => {
+  return {
+    type: ActionType.SET_CURRENT_MODE,
+    payload: value,
+  };
+};
