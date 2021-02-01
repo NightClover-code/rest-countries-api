@@ -156,7 +156,12 @@ export const fetchCountry = (code: string) => async (
       borders,
       subregion,
       topLevelDomain: topLevelDomain[0],
-      currencies: currencies.map((currency: any) => currency.name),
+      currencies: currencies.map((currency: any, index: number) => {
+        if (currencies.length - 1 === index) {
+          return `${currency.name}`;
+        }
+        return `${currency.name}, `;
+      }),
       languages: languages.map((lang: any, index: number) => {
         if (languages.length - 1 === index) {
           return `${lang.name}`;
@@ -182,5 +187,11 @@ export const setCurrentCode = (code: string) => {
   return {
     type: ActionType.CURRENT_COUNTRY_CODE,
     payload: code,
+  };
+};
+//changing color mode
+export const changeColorMode = () => {
+  return {
+    type: ActionType.CHANGE_CURRENT_MODE,
   };
 };

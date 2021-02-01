@@ -17,4 +17,6 @@ export enum ActionType {
   FETCH_COUNTRY_ERROR = 'FETCH_COUNTRY_ERROR',
   //current country name
   CURRENT_COUNTRY_CODE = 'CURRENT_COUNTRY_CODE',
+  //current mode: light mode / dark mode
+  CHANGE_CURRENT_MODE = 'CHANGE_CURRENT_MODE',
 }
