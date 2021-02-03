@@ -373,6 +373,20 @@ header .container .mode__container .mode {
   color: #030303;
 }
 
+.attribution {
+  background-color: #202c37;
+  color: #ccc;
+  text-align: center;
+  padding: 20px 0;
+  letter-spacing: 1.2px;
+  font-size: 12px;
+}
+
+.attribution__light {
+  background-color: #fafafa;
+  color: #111517;
+}
+
 * {
   margin: 0;
   padding: 0;

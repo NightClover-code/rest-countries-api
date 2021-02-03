@@ -7,7 +7,7 @@ import { useTypedSelector } from '../hooks/useTypedSelector';
 import CountryDetails from './CountryDetails';
 import App from './App';
 import Header from './Header';
-import Attribution from '../components/Attribution';
+import Attribution from './Attribution';
 //app routes
 const AppRouter: React.FC = () => {
   //getting actions & state
