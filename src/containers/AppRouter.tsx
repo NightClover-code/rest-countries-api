@@ -1,11 +1,13 @@
-import App from './App';
 import { BrowserRouter, Route } from 'react-router-dom';
-import CountryDetails from './CountryDetails';
-import Header from './Header';
 //importing hooks
 import { useEffect } from 'react';
 import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
+//importing components
+import CountryDetails from './CountryDetails';
+import App from './App';
+import Header from './Header';
+import Attribution from '../components/Attribution';
 //app routes
 const AppRouter: React.FC = () => {
   //getting actions & state
@@ -57,6 +59,7 @@ const AppRouter: React.FC = () => {
       <Header />
       <Route path="/" component={App} exact />
       <Route path="/:code" component={CountryDetails} />
+      <Attribution />
     </BrowserRouter>
   );
 };
