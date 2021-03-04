@@ -1,14 +1,6 @@
 //importing types
 import { ActionType } from '../action-types';
-//data interface
-export interface CountryInterface {
-  name: string;
-  population: string;
-  region: string;
-  flag: string;
-  capital: string;
-  code: string;
-}
+import { CountryInterface } from '../country';
 //typeAction
 export type CountriesAction =
   | FetchCountries
@@ -30,7 +22,7 @@ interface FetchCountriesError {
   type: ActionType.FETCH_COUNTRIES_ERROR;
   payload: string;
 }
-//action interfaces
+//search Countries
 interface SearchCountries {
   type: ActionType.SEARCH_COUNTRIES;
 }

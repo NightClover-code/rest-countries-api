@@ -1,19 +1,7 @@
 //importing types
 import { ActionType } from '../action-types';
-//data interface
-export interface DetailedCountryInterface {
-  name: string;
-  population: string;
-  region: string;
-  flag: string;
-  capital: string;
-  nativeName: string;
-  subregion: string;
-  topLevelDomain: string;
-  borders: string[];
-  currencies: string[];
-  languages: string[];
-}
+import { DetailedCountryInterface } from '../detailedCountry';
+
 //type action
 export type DetailedCountryAction =
   | FetchCountry

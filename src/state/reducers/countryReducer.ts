@@ -1,9 +1,7 @@
 //importing types
 import { ActionType } from '../action-types';
-import {
-  DetailedCountryAction,
-  DetailedCountryInterface,
-} from '../actions/fetchCountry';
+import { DetailedCountryAction } from '../actions/fetchCountry';
+import { DetailedCountryInterface } from '../detailedCountry';
 //state interface
 interface DetailedCountryState {
   loading: boolean;
@@ -20,7 +18,7 @@ const initialState = {
 const fetchCountry = (
   state: DetailedCountryState = initialState,
   action: DetailedCountryAction
-) => {
+): DetailedCountryState => {
   switch (action.type) {
     case ActionType.FETCH_COUNTRY:
       return { loading: true, error: null, data: null };
