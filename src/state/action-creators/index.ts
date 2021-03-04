@@ -21,6 +21,9 @@ export const fetchCountries = () => async (
     dispatch({
       type: ActionType.FETCH_COUNTRIES,
     });
+    dispatch({
+      type: ActionType.FILTER_COUNTRIES,
+    });
     //getting countries data
     const response = await countriesAPI.get('/all');
     //saving data
@@ -43,13 +46,17 @@ export const fetchCountries = () => async (
     });
     //linking filtered countries with countries
     dispatch({
-      type: ActionType.FILTER_COUNTRIES,
+      type: ActionType.FILTER_COUNTRIES_SUCCESS,
       payload: countries,
     });
   } catch (err) {
     //dispatching errors
     dispatch({
       type: ActionType.FETCH_COUNTRIES_ERROR,
+      payload: err.message,
+    });
+    dispatch({
+      type: ActionType.FILTER_COUNTRIES_ERROR,
       payload: err.message,
     });
   }
@@ -62,6 +69,9 @@ export const searchCountries = (term: string) => async (
     //loading
     dispatch({
       type: ActionType.SEARCH_COUNTRIES,
+    });
+    dispatch({
+      type: ActionType.FILTER_COUNTRIES,
     });
     //getting countries data
     const response = await countriesAPI.get(`/name/${term}`);
@@ -84,13 +94,17 @@ export const searchCountries = (term: string) => async (
       payload: countries,
     });
     dispatch({
-      type: ActionType.FILTER_COUNTRIES,
+      type: ActionType.FILTER_COUNTRIES_SUCCESS,
       payload: countries,
     });
   } catch (err) {
     //dispatching errors
     dispatch({
       type: ActionType.SEARCH_COUNTRIES_ERROR,
+      payload: "Can't find the country you're looking for",
+    });
+    dispatch({
+      type: ActionType.FILTER_COUNTRIES_ERROR,
       payload: "Can't find the country you're looking for",
     });
   }
@@ -107,7 +121,7 @@ export const filterCountries = (countryId: string | null) => (
   );
   //dispatching results
   dispatch({
-    type: ActionType.FILTER_COUNTRIES,
+    type: ActionType.FILTER_COUNTRIES_SUCCESS,
     payload: filteredCountries,
   });
 };
