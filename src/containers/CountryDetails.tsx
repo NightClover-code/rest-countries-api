@@ -60,7 +60,7 @@ const CountryDetails: React.FC = () => {
       className={`details__container ${isLightMode ? 'details__light' : ''}`}
     >
       {loading && (
-        <div className="ui active dimmer">
+        <div className={`ui active ${isLightMode ? 'inverted' : ''} dimmer`}>
           <div className="ui loader"></div>
         </div>
       )}

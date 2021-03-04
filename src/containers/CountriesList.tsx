@@ -11,9 +11,10 @@ import CountriesItem from './CountriesItem';
 const CountriesList: React.FC = () => {
   //redux actions & state
   const { fetchCountries } = useActions();
-  const { loading, error, data } = useTypedSelector(
-    state => state.filteredCountries
-  );
+  const {
+    filteredCountries: { loading, error, data },
+    isLightMode,
+  } = useTypedSelector(state => state);
   //fetching countries on first component mount
   useEffect(() => {
     fetchCountries();
@@ -37,7 +38,7 @@ const CountriesList: React.FC = () => {
   return (
     <div className="countries__list">
       {loading && (
-        <div className="ui active dimmer">
+        <div className={`ui active ${isLightMode ? 'inverted' : ''} dimmer`}>
           <div className="ui loader"></div>
         </div>
       )}
