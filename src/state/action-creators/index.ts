@@ -66,16 +66,18 @@ export const searchCountries = (term: string) => async (
     //getting countries data
     const response = await countriesAPI.get(`/name/${term}`);
     //saving data
-    const countries: CountryInterface[] = response.data.map((country: any) => {
-      return {
-        name: country.name,
-        population: numbersWithCommas(country.population),
-        region: country.region,
-        flag: country.flag,
-        code: country.alpha3Code,
-        capital: country.capital,
-      };
-    });
+    const countries: CountryInterface[] = response.data.map(
+      (country: any): CountryInterface => {
+        return {
+          name: country.name,
+          population: numbersWithCommas(country.population),
+          region: country.region,
+          flag: country.flag,
+          code: country.alpha3Code,
+          capital: country.capital,
+        };
+      }
+    );
     //dispatching results
     dispatch({
       type: ActionType.SEARCH_COUNTRIES_SUCCESS,
