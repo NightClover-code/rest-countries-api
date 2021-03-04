@@ -14,7 +14,7 @@ const BorderCountry: React.FC = () => {
   const isLightMode = useTypedSelector(state => state.isLightMode);
   const { setCurrentCode } = useActions();
   //returning border components
-  if (data) {
+  if (data && data.borders) {
     //mapping over 3 borders only
     const lessBorders = data.borders.slice(0, 3);
     const returnedBorders = lessBorders.map((border: string) => {

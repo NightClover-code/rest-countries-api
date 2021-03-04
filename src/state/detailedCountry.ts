@@ -7,7 +7,7 @@ export interface DetailedCountryInterface {
   nativeName: string;
   subregion: string;
   topLevelDomain: string;
-  borders: string[];
+  borders?: string[];
   currencies: string[];
   languages: string[];
 }
