@@ -4,7 +4,7 @@
 
 ## The challenge
 
-Your challenge was to integrate with the [REST Countries API](https://restcountries.eu) to pull country data and display it like in the designs.
+The challenge was to integrate with the [REST Countries API](https://restcountries.eu) to pull country data and display it like in the design.
 
 Users should be able to:
 
@@ -13,9 +13,9 @@ Users should be able to:
 - Filter countries by region
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode 
+- Toggle the color scheme between light and dark mode
+- See the color mode and the country saved in local storage automatically
 
 ## Giving feedback
 
 Feedback is always welcome, so feel free to send me your feedback anytime 🙏🏼
-
