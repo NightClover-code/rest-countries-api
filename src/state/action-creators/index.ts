@@ -21,9 +21,6 @@ export const fetchCountries = () => async (
     dispatch({
       type: ActionType.FETCH_COUNTRIES,
     });
-    dispatch({
-      type: ActionType.FILTER_COUNTRIES,
-    });
     //getting countries data
     const response = await countriesAPI.get('/all');
     //saving data
@@ -50,10 +47,6 @@ export const fetchCountries = () => async (
     //dispatching errors
     dispatch({
       type: ActionType.FETCH_COUNTRIES_ERROR,
-      payload: err.message,
-    });
-    dispatch({
-      type: ActionType.FILTER_COUNTRIES_ERROR,
       payload: err.message,
     });
   }

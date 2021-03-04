@@ -1,8 +1,8 @@
 //improting styles
 import '../styles/css/app.css';
+//importing components
 import CountriesList from './CountriesList';
 import Filters from './Filters';
-//importing components
 import SearchBar from './SearchBar';
 //importing hooks
 import { useEffect } from 'react';
@@ -10,7 +10,7 @@ import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 //app component
 const App: React.FC = () => {
-  //getting state & actions
+  //redux state & actions
   const { setCurrentCode } = useActions();
   const isLightMode = useTypedSelector(state => state.isLightMode);
   useEffect(() => {
