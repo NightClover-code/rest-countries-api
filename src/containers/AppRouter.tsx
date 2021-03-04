@@ -8,51 +8,28 @@ import CountryDetails from './CountryDetails';
 import App from './App';
 import Header from './Header';
 import Attribution from './Attribution';
+//importing local Storage logic
+import { getCurrent, saveToLocal } from '../state';
 //app routes
 const AppRouter: React.FC = () => {
-  //getting actions & state
-  const { setCurrentCode, setColorMode } = useActions();
+  //reudux store state
   const currentCode = useTypedSelector(state => state.currentCode);
   const isLightMode = useTypedSelector(state => state.isLightMode);
+  //saving items to localStorage on first render
   useEffect(() => {
-    //getting code from local storage
-    const getCurrentCode = () => {
-      if (localStorage.getItem('currentCode') === null) {
-        localStorage.setItem('currentCode', JSON.stringify(''));
-      } else {
-        let currentCodeLocal = JSON.parse(localStorage.getItem('currentCode')!);
-        setCurrentCode(currentCodeLocal);
-      }
-    };
-    //saving items to localStorage on first render
-    getCurrentCode();
+    getCurrent('currentCode');
   }, []);
+  //saving currentCode to local storage based on currentCode change
   useEffect(() => {
-    //saving currentCode to local storage based on currentCode change
-    const saveToLocal = () => {
-      localStorage.setItem('currentCode', JSON.stringify(currentCode));
-    };
-    saveToLocal();
+    saveToLocal('currentCode', currentCode);
   }, [currentCode]);
+  //saving items to localStorage on first render
   useEffect(() => {
-    //getting color mode from local storage
-    const getCurrentMode = () => {
-      if (localStorage.getItem('currentMode') === null) {
-        localStorage.setItem('currentMode', JSON.stringify(false));
-      } else {
-        let currentModeLocal = JSON.parse(localStorage.getItem('currentMode')!);
-        setColorMode(currentModeLocal);
-      }
-    };
-    //saving items to localStorage on first render
-    getCurrentMode();
+    getCurrent('currentMode');
   }, []);
+  //saving currentMode to local storage based on currentMode change
   useEffect(() => {
-    //saving currentMode to local storage based on currentMode change
-    const saveToLocal = () => {
-      localStorage.setItem('currentMode', JSON.stringify(isLightMode));
-    };
-    saveToLocal();
+    saveToLocal('currentMode', isLightMode);
   }, [isLightMode]);
   return (
     <BrowserRouter>

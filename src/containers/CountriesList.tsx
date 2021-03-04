@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
-import { CountryInterface } from '../state/actions/fetchCountries';
+import { CountryInterface } from '../state';
 //random id's
 import { v4 as uuidv4 } from 'uuid';
 //importing components

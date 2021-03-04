@@ -13,6 +13,7 @@ const App: React.FC = () => {
   //redux state & actions
   const { setCurrentCode } = useActions();
   const isLightMode = useTypedSelector(state => state.isLightMode);
+  //initializing alpha code to be an empty string
   useEffect(() => {
     setCurrentCode('');
   }, [setCurrentCode]);
