@@ -10,8 +10,10 @@ const BorderCountry: React.FC = () => {
   //iniitalizinig the converter with english language
   countries.registerLocale(require('i18n-iso-countries/langs/en.json'));
   //redux state & actions
-  const { error, data } = useTypedSelector(state => state.country);
-  const isLightMode = useTypedSelector(state => state.isLightMode);
+  const {
+    isLightMode,
+    country: { data, error },
+  } = useTypedSelector(state => state);
   const { setCurrentCode } = useActions();
   //returning border components
   if (data && data.borders) {

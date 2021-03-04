@@ -12,8 +12,7 @@ import Attribution from './Attribution';
 //app routes
 const AppRouter: React.FC = () => {
   //reudux store state
-  const currentCode = useTypedSelector(state => state.currentCode);
-  const isLightMode = useTypedSelector(state => state.isLightMode);
+  const { currentCode, isLightMode } = useTypedSelector(state => state);
   //local storage custom hooks
   const getCurrent = useGetCurrent();
   const saveToLocal = useSaveToLocal();

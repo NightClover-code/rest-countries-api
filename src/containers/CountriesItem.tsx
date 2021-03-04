@@ -11,7 +11,7 @@ const CountriesItem: React.FC<CountryInterface> = ({
   flag,
   code,
 }) => {
-  //getting state & actions
+  //redux state & actions
   const { setCurrentCode } = useActions();
   const isLightMode = useTypedSelector(state => state.isLightMode);
   return (

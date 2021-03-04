@@ -13,9 +13,11 @@ import DetailContent from '../containers/DetailContent';
 const CountryDetails: React.FC = () => {
   //redux actions & state
   const { fetchCountry } = useActions();
-  const { loading, error, data } = useTypedSelector(state => state.country);
-  const currentCode = useTypedSelector(state => state.currentCode);
-  const isLightMode = useTypedSelector(state => state.isLightMode);
+  const {
+    currentCode,
+    isLightMode,
+    country: { loading, error, data },
+  } = useTypedSelector(state => state);
   //fetching country
   useEffect(() => {
     fetchCountry(currentCode);

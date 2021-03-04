@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 import CountriesItem from './CountriesItem';
 //countries component
 const CountriesList: React.FC = () => {
-  //getting actions & state
+  //redux actions & state
   const { fetchCountries } = useActions();
   const { loading, error, data } = useTypedSelector(
     state => state.filteredCountries
