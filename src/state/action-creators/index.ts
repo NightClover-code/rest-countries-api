@@ -1,13 +1,13 @@
-//importing types & api request file
+//importing types
 import { Dispatch } from 'redux';
-import countriesAPI from '../../api/countries';
-import { CountriesAction, CountryInterface } from '../actions/fetchCountries';
-import {
-  DetailedCountryAction,
-  DetailedCountryInterface,
-} from '../actions/fetchCountry';
+import { CountriesAction } from '../actions/fetchCountries';
+import { DetailedCountryAction } from '../actions/fetchCountry';
 import { ActionType } from '../action-types';
 import { RootState } from '../reducers';
+import { CountryInterface } from '../country';
+import { DetailedCountryInterface } from '../detailedCountry';
+//importing api
+import countriesAPI from '../../api/countries';
 //format population number
 const numbersWithCommas = (x: number): string => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -24,21 +24,24 @@ export const fetchCountries = () => async (
     //getting countries data
     const response = await countriesAPI.get('/all');
     //saving data
-    const countries: CountryInterface[] = response.data.map((country: any) => {
-      return {
-        name: country.name,
-        population: numbersWithCommas(country.population),
-        region: country.region,
-        capital: country.capital,
-        flag: country.flag,
-        code: country.alpha3Code,
-      };
-    });
+    const countries: CountryInterface[] = response.data.map(
+      (country: any): CountryInterface => {
+        return {
+          name: country.name,
+          population: numbersWithCommas(country.population),
+          region: country.region,
+          capital: country.capital,
+          flag: country.flag,
+          code: country.alpha3Code,
+        };
+      }
+    );
     //dispatching results
     dispatch({
       type: ActionType.FETCH_COUNTRIES_SUCCESS,
       payload: countries,
     });
+    //linking filtered countries with countries
     dispatch({
       type: ActionType.FILTER_COUNTRIES,
       payload: countries,

@@ -18,7 +18,7 @@ const initialState = {
 const countriesReducer = (
   state: CountriesState = initialState,
   action: CountriesAction
-) => {
+): CountriesState => {
   switch (action.type) {
     case ActionType.FETCH_COUNTRIES_SUCCESS:
       return { loading: false, error: null, data: action.payload };
