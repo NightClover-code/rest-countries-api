@@ -1,20 +1,8 @@
 import React from 'react';
+import { DetailedCountryInterface } from '../state';
 import BorderCountries from './BorderCountries';
-//props
-interface Props {
-  name: string;
-  population: string;
-  region: string;
-  flag: string;
-  capital: string;
-  nativeName: string;
-  subregion: string;
-  topLevelDomain: string;
-  currencies: string[];
-  languages: string[];
-}
 //detail content component
-const DetailContent: React.FC<Props> = ({
+const DetailContent: React.FC<DetailedCountryInterface> = ({
   name,
   population,
   region,

@@ -1,7 +1,8 @@
 //importing hooks
 import { useTypedSelector } from '../hooks/useTypedSelector';
+//attribution component
 const Attribution = () => {
-  //getting state
+  //store state
   const isLightMode = useTypedSelector(state => state.isLightMode);
   return (
     <div className={`attribution ${isLightMode ? 'attribution__light' : ''}`}>

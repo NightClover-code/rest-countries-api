@@ -11,17 +11,18 @@ import PreviousButton from './PreviousButton';
 import DetailContent from '../containers/DetailContent';
 //details component
 const CountryDetails: React.FC = () => {
-  //getting actions & state
+  //redux actions & state
   const { fetchCountry } = useActions();
   const { loading, error, data } = useTypedSelector(state => state.country);
   const currentCode = useTypedSelector(state => state.currentCode);
   const isLightMode = useTypedSelector(state => state.isLightMode);
+  //fetching country
   useEffect(() => {
     fetchCountry(currentCode);
-  }, [currentCode]);
+  }, [currentCode, fetchCountry]);
   //returning detail content item;
   const returnDetail = () => {
-    //returned country{
+    //returned country
     if (data) {
       const {
         name,

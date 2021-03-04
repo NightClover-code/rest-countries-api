@@ -1,15 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
-interface Props {
-  name: string;
-  population: string;
-  region: string;
-  capital: string;
-  code: string;
-  flag: string;
-}
-const CountriesItem: React.FC<Props> = ({
+import { CountryInterface } from '../state';
+//countries item component
+const CountriesItem: React.FC<CountryInterface> = ({
   name,
   population,
   region,

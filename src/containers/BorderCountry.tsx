@@ -9,7 +9,7 @@ import countries from 'i18n-iso-countries';
 const BorderCountry: React.FC = () => {
   //iniitalizinig the converter with english language
   countries.registerLocale(require('i18n-iso-countries/langs/en.json'));
-  //getting state & actions
+  //redux state & actions
   const { error, data } = useTypedSelector(state => state.country);
   const isLightMode = useTypedSelector(state => state.isLightMode);
   const { setCurrentCode } = useActions();

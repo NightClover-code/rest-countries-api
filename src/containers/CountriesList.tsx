@@ -17,7 +17,7 @@ const CountriesList: React.FC = () => {
   //fetching countries on first component mount
   useEffect(() => {
     fetchCountries();
-  }, []);
+  }, [fetchCountries]);
   //returned country items
   const returnedItems = data.map(
     ({ name, population, region, flag, capital, code }: CountryInterface) => {
