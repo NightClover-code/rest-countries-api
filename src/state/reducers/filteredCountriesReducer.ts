@@ -20,11 +20,7 @@ const filteredCountriesReducer = (
 ) => {
   switch (action.type) {
     case ActionType.FILTER_COUNTRIES:
-      return { loading: true, error: null, data: [] };
-    case ActionType.FILTER_COUNTRIES_SUCCESS:
       return { loading: false, error: null, data: action.payload };
-    case ActionType.FILTER_COUNTRIES_ERROR:
-      return { loading: false, error: action.payload, data: [] };
     default:
       return state;
   }
