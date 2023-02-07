@@ -8,7 +8,7 @@ The challenge was to integrate with the [REST Countries API](https://restcountri
 
 I quite over-engineered this one, it was an opportunity for me to try to mix technologies that I was interested in, such as `React.js`, `Redux` & `Typescript`.
 
-This will server as a good boilerplate for your future `Redux` & `Typescript` projects.
+This will serve as a good boilerplate for your future `Redux` and `Typescript` projects.
 
 Users should be able to:
 
