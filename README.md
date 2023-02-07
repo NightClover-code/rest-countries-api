@@ -4,7 +4,11 @@
 
 ## The challenge
 
-The challenge was to integrate with the [REST Countries API](https://restcountries.eu) to pull country data and display it like in the design.
+The challenge was to integrate with the [REST Countries API](https://restcountries.eu) to pull country data and display it like in the design. The idea for this project was brought by [@frontendmentor](https://www.frontendmentor.io/).
+
+I quite over-engineered this one, it was an opportunity for me to try to mix technologies that I was interested in, such as `React.js`, `Redux` & `Typescript`.
+
+This will server as a good boilerplate for your future `Redux` & `Typescript` projects.
 
 Users should be able to:
 
