@@ -45,10 +45,6 @@ Users should be able to:
 - Scss - CSS Preprocessor
 - Typescript
 
-## Giving feedback
-
-Feedback is always welcome, so feel free to send me your feedback anytime 🙏🏼
-
 ## Author
 - [@achrafdev](https://achrafdev.com)
 
