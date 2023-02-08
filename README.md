@@ -23,7 +23,6 @@ Users should be able to:
 ### Project Structure 📁
 
 ```bash
-/
 ├───public
 ├───src/
     ├───api/
